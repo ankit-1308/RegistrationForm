@@ -67,7 +67,7 @@
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="TLS-oW-gyp">
+                <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" translatesAutoresizingMaskIntoConstraints="NO" id="TLS-oW-gyp">
                     <rect key="frame" x="128" y="483" width="273" height="42"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="42" id="WrL-Xx-s0r"/>
@@ -101,6 +101,9 @@
                     <rect key="frame" x="20" y="800" width="374" height="35"/>
                     <state key="normal" title="Button"/>
                     <buttonConfiguration key="configuration" style="plain" title="Save"/>
+                    <connections>
+                        <action selector="submitButtonTapped:" destination="-1" eventType="touchUpInside" id="41m-FK-hMg"/>
+                    </connections>
                 </button>
                 <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="dMG-gh-AL9">
                     <rect key="frame" x="50" y="616" width="314" height="32"/>
@@ -126,7 +129,6 @@
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="TLS-oW-gyp" secondAttribute="trailing" constant="13" id="02N-9F-wEz"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="yGP-r7-nXa" secondAttribute="trailing" constant="50" id="0ns-vJ-Jo2"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="YRb-m2-ube" secondAttribute="bottom" constant="27" id="19J-Mi-Bh0"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="YRb-m2-ube" secondAttribute="trailing" constant="169" id="1HY-jZ-FA5"/>
                 <constraint firstItem="3AT-m5-1lQ" firstAttribute="top" secondItem="yGP-r7-nXa" secondAttribute="bottom" constant="8" symbolic="YES" id="27H-MD-Muj"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="YRb-m2-ube" secondAttribute="trailing" constant="20" id="3kq-of-NLH"/>
                 <constraint firstItem="yGP-r7-nXa" firstAttribute="top" secondItem="ayq-eK-Oq9" secondAttribute="bottom" constant="31" id="7JA-l8-Ytx"/>
@@ -140,7 +142,6 @@
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Bde-gO-XKc" secondAttribute="trailing" constant="50" id="TdP-rh-pMI"/>
                 <constraint firstItem="Bde-gO-XKc" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="50" id="Uja-eR-Yyg"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="eWn-XF-SeJ" secondAttribute="trailing" constant="50" id="X9h-Rw-tRL"/>
-                <constraint firstItem="YRb-m2-ube" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="170" id="YNW-qG-dhW"/>
                 <constraint firstItem="WaR-HC-vEf" firstAttribute="leading" secondItem="yX3-Au-pz8" secondAttribute="trailing" constant="37" id="Yov-a8-a11"/>
                 <constraint firstItem="LlM-ek-X3C" firstAttribute="top" secondItem="dMG-gh-AL9" secondAttribute="bottom" constant="76" id="Ywj-Wz-0Q1"/>
                 <constraint firstItem="yGP-r7-nXa" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="50" id="ZEn-Pw-qes"/>
