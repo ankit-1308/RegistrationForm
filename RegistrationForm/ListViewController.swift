@@ -25,7 +25,7 @@ class ListViewController: UIViewController {
         super.viewDidLoad()
         self.title = "User List"
         
-        view.backgroundColor = UIColor.yellow
+        tableView.backgroundColor = UIColor.yellow
         view.addSubview(tableView)
         tableView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
@@ -51,7 +51,6 @@ class ListViewController: UIViewController {
         
    
         
-        
     }
     
     @objc private func popViewController() {
@@ -71,23 +70,16 @@ class ListViewController: UIViewController {
     }
 }
 
+
+
 class customCell: UITableViewCell {
     
-    
-    let testLabel = UILabel()
-    let name = UILabel(frame: CGRect(x: 120, y: 20, width: 200, height: 30))
-    let phoneNumber = UILabel(frame: CGRect(x: 120, y: 60, width: 200, height: 30))
-    let email = UILabel(frame: CGRect(x: 120, y: 80, width: 200, height: 30))
-    let dob = UILabel(frame: CGRect(x: 120, y: 120, width: 200, height: 30))
-    let gender = UILabel(frame: CGRect(x: 120, y: 160, width: 200, height: 30))
-    let food = UILabel(frame: CGRect(x: 120, y: 200, width: 200, height: 30))
-    
-    
-    
-    
-    
-    
-    
+    let name = UILabel()
+    let phoneNumber = UILabel()
+    let email = UILabel()
+    let dob = UILabel()
+    let gender = UILabel()
+    let food = UILabel()
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -98,13 +90,49 @@ class customCell: UITableViewCell {
         addSubview(dob)
         addSubview(gender)
         addSubview(food)
+        
+        configureConstraints()
     }
-    
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
+    private func configureConstraints() {
+        name.translatesAutoresizingMaskIntoConstraints = false
+        phoneNumber.translatesAutoresizingMaskIntoConstraints = false
+        email.translatesAutoresizingMaskIntoConstraints = false
+        dob.translatesAutoresizingMaskIntoConstraints = false
+        gender.translatesAutoresizingMaskIntoConstraints = false
+        food.translatesAutoresizingMaskIntoConstraints = false
+        
+        NSLayoutConstraint.activate([
+            name.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 20),
+            name.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20),
+            name.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: 20),
+            
+            phoneNumber.topAnchor.constraint(equalTo: name.bottomAnchor, constant: 10),
+            phoneNumber.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20),
+            phoneNumber.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: 20),
+            
+            email.topAnchor.constraint(equalTo: phoneNumber.bottomAnchor, constant: 10),
+            email.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20),
+            email.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: 20),
+            
+            dob.topAnchor.constraint(equalTo: email.bottomAnchor, constant: 10),
+            dob.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20),
+            dob.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: 20),
+            
+            gender.topAnchor.constraint(equalTo: dob.bottomAnchor, constant: 10),
+            gender.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20),
+            gender.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: 20),
+            
+            food.topAnchor.constraint(equalTo: gender.bottomAnchor, constant: 10),
+            food.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20),
+            food.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: 20),
+            food.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: 20)
+        ])
+    }
 }
 
 extension ListViewController: UITableViewDataSource {
@@ -127,14 +155,22 @@ extension ListViewController: UITableViewDataSource {
         cell.dob.text = "DOB: \(user.dob)"
         cell.gender.text = "Gender: \(user.gender)"
         cell.food.text = "Food: \(user.food)"
+        cell.backgroundColor = UIColor.brown
+        cell.layer.cornerRadius = 2.0
+       
+        cell.layer.borderWidth = 2.0
         
         return cell
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        //return UITableView.automaticDimension
+       // return UITableView.automaticDimension
         
-        return 300.0
+        return 200.0
+    }
+    
+    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
+           return 200 // You can set an estimated row height here for performance improvements
     }
 }
 

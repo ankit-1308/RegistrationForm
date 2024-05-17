@@ -22,7 +22,7 @@ class FormViewController: UIViewController {
         self.title = "User Form"
         view.backgroundColor = UIColor.green
 
-        let push = UIButton(frame: CGRect(x: 280, y: 50, width: 150, height: 50))
+        let push = UIButton(frame: CGRect(x: 280, y: 250, width: 150, height: 50))
         push.setTitle("?", for: .normal)
         push.setTitleColor(.red, for: .normal)
         push.addTarget(self, action: #selector(clickPush), for: .touchUpInside)
