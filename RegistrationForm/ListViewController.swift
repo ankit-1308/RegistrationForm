@@ -58,18 +58,19 @@ class ListViewController: UIViewController {
     }
 
     
-    
     func loadUsers() {
         if let data = UserDefaults.standard.data(forKey: "users"),
            let users = try? JSONDecoder().decode([User].self, from: data) {
             self.users = users
             tableView.reloadData()
+            
+            print("called loadUsers table")
+            
         } else {
             print("Failed to load users or no users found")
         }
     }
 }
-
 
 
 class customCell: UITableViewCell {
@@ -90,7 +91,7 @@ class customCell: UITableViewCell {
         addSubview(dob)
         addSubview(gender)
         addSubview(food)
-        
+        print("UITableView Cell craeted ")
         configureConstraints()
     }
     

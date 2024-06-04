@@ -41,7 +41,7 @@ class FormViewController: UIViewController {
     }
     
     @objc func clickPush() {
-        let listVC = ListViewController()
+        let listVC = ListViewController().self
         navigationController?.pushViewController(listVC, animated: true)
         }
     
